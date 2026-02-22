@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-lamp',
@@ -9,5 +9,13 @@ import { Component, signal } from '@angular/core';
 export class Lamp {
   brightness = signal(50);
 
-  updateBrightness(event: Event) {}
+  roomDarkness = computed(() => {
+    const value = 100 - this.brightness();
+    return `rgb(${value * 2}, ${value * 2}, ${value * 2})`;
+  });
+
+  updateBrightness(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.brightness.set(+input.value);
+  }
 }
