@@ -1,18 +1,10 @@
 <div class="room">
-  <div class="bulb-wrapper">
-    <div class="bulb" [style.boxShadow]="'0 0 ' + brightness() * 4 + 'px rgba(255, 200, 0, 0.8)'">
-      <div class="filament" [style.opacity]="brightness() / 100"></div>
-
-      <div class="highlight"></div>
-    </div>
-
-    <div class="neck"></div>
-
-    <div class="base">
-      <div class="thread"></div>
-      <div class="thread"></div>
-      <div class="thread"></div>
-    </div>
+  <div
+    class="emoji-bulb"
+    [style.filter]="'brightness(' + brightness() / 50 + ')'"
+    [style.textShadow]="'0 0 ' + brightness() * 2 + 'px gold'"
+  >
+    💡
   </div>
 
   <input
@@ -24,5 +16,5 @@
     class="slider"
   />
 
-  <p class="bulb-slider-text">Brightness: {{ brightness() }}%</p>
+  <p>Brightness: {{ brightness() }}%</p>
 </div>
