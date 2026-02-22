@@ -1,4 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .room {
+  padding: 0;
   height: 100vh;
   background: #0c0c0c;
   display: flex;
@@ -14,4 +20,8 @@
 
 .slider {
   width: 300px;
+}
+
+.bulb-text {
+  color: wheat;
 }
